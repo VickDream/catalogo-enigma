@@ -9,7 +9,7 @@ export function Navbar() {
       </a>
       
       <a 
-        href="https://wa.me/tu_numero_aqui?text=Hola,%20me%20gustaría%20solicitar%20información%20general%20del%20catálogo" 
+        href="https://wa.me/+527228418404?text=Hola,%20me%20gustaría%20solicitar%20información%20general%20del%20catálogo" 
         target="_blank" 
         rel="noopener noreferrer" 
         className={styles.contactBadge}

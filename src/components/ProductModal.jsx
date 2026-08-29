@@ -34,9 +34,14 @@ export function ProductModal({ product, onClose, onInquiry }) {
               <p className={styles.description}>{product.description}</p>
               <div className={styles.price}>${product.price} MXN</div>
               
-              <button className={styles.actionButton} onClick={() => onInquiry(product)}>
-                Cotizar por WhatsApp
-              </button>
+              <a 
+                href={`https://wa.me/+527228418404?text=${encodeURIComponent(`Hola, me interesa cotizar el producto: ${product.name}               (${product.price} MXN)`)}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.actionButton}
+               >
+                 Cotizar por WhatsApp
+               </a>
             </div>
           </motion.div>
         </motion.div>
