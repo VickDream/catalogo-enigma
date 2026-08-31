@@ -124,6 +124,33 @@
   text-decoration: none;   /* Evita que aparezca al hacer hover */
 }
 
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.galleryButton {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.galleryButton:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -158,4 +185,57 @@
   color: var(--text-muted);
   margin-bottom: 1.2rem;
   text-align: center;
+}
+
+/* --- BOTONES DE NAVEGACIÓN DEL CARRUSEL (FLECHAS) --- */
+.navButtonPrev,
+.navButtonNext {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navButtonPrev:hover,
+.navButtonNext:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.navButtonPrev {
+  left: 1.5rem;
+}
+
+.navButtonNext {
+  right: 1.5rem;
+}
+
+/* Ajuste para dispositivos móviles donde el espacio a los lados es menor */
+@media (max-width: 768px) {
+  .navButtonPrev {
+    left: 0.5rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+  .navButtonNext {
+    right: 0.5rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
 }

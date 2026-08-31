@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styles from '../styles/SplashLogo.module.css';
 
-export function SplashLogo() {
+export function SplashLogo({ text = "Cargando Catálogo..." }) {
   return (
     <motion.div 
       className={styles.splashContainer}
@@ -24,7 +24,7 @@ export function SplashLogo() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          Cargando Catálogo...
+          {text}
         </motion.span>
       </div>
     </motion.div>
